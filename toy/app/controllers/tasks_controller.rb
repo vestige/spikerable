@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all(:conditions => { :done => false }, :order => "due_date")  
+    @tasks = Task.where(:done => false)
   end
-
+  
+  def show
+    @task = Task.find(params[:id])
+  end
+  
+  
 end

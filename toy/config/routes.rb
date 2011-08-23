@@ -1,5 +1,11 @@
 Toy::Application.routes.draw do
-  resources :tasks, :only => [ :index]
+  get "hello/world"
+  #get "greeting.html" => "hello#world"
+
+  root :to => "tasks#index"
+  resources :tasks
+  
+  #resources :tasks, :only => [ :index]
   # get "tasks/index"
   
   # The priority is based upon order of creation:

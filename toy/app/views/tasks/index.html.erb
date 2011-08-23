@@ -1,8 +1,12 @@
 <h1>Tasks#index</h1>
+
 <table class="tasks">
   <col class="name" />
   <col class="due_date" />
   <% @tasks.each do |task| %>
-    <%= render 'task' %>
+  <tr>
+    <td><%= link_to task.name, task %></td>
+    <td><%= task.due_date %></td>
+  </tr>
   <% end %>
 </table>
