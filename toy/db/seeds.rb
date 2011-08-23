@@ -1,6 +1,9 @@
-table_names = %w(tasks)  
+# -*- encoding: UTF-8 -*-
 
-table_names.each do |table_name|  
-  path = "#{Rails.root}/db/seeds/#{Rails.env}/#{table_name}.rb"  
-  require(path) if File.exist?(path)  
+names = [ "切手を買う", "報告書を書く", "家賃を払う", "猫の餌を買う", "燃えないゴミを出す"]
+
+5.times do |n|
+  Task.create(:name => names[n],
+              :due_date => (n - 2).days.from_now,
+              :done => n.zero?)
 end
