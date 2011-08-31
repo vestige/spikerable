@@ -1,0 +1,23 @@
+ul.navi{
+  width: 560px;
+  margin: 15px auto 5px;
+  list-style: none;
+  padding: 0;
+}
+
+ul.navi li{
+  display: inline;
+  margin-right: 1px;
+  background-color: #666;
+  border: solid 1px #ccc;
+  padding: 5px;
+}
+
+ul.navi li.selected{
+  background-color: #eee;
+}
+
+ul.navi li a{
+  color: #fff;
+  text-decoration: none;
+}
