@@ -3,7 +3,10 @@ Toy::Application.routes.draw do
   #get "greeting.html" => "hello#world"
 
   root :to => "tasks#index"
-  resources :tasks
+  resources :tasks do
+    put :finish, :restart, :on => :member
+    get :done, :on => :collection
+  end
   
   #resources :tasks, :only => [ :index]
   # get "tasks/index"
