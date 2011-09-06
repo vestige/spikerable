@@ -1,5 +1,9 @@
 <h1>Tasks#index</h1>
 
+<%= form_tag [:search, :tasks], :method => :get, :style => "text-align: right" do %>
+  <%= text_field_tag "query", params[:query] %> <%= submit_tag "Search" %>
+<% end %>
+
 <ul class = "navi">
   <% if params[:action] == "index" %>
     <li class = "selected"> Todo </li>
