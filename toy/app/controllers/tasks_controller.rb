@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.undone
+    @tasks = Task.undone.paginate(:page => params[:page], :per_page => 10)
   end
   
   def done
-    @tasks = Task.done
+    @tasks = Task.done.paginate(:page => params[:page], :per_page => 10)
     
     render :index
   end
@@ -12,6 +12,7 @@ class TasksController < ApplicationController
   def search
     @tasks = Task.undone
     @tasks = @tasks.search(params[:query]) if params[:query].present?
+    @tasks = @tasks.paginate(:page => params[:page], :per_page => 10)
 
     render :index
   end
