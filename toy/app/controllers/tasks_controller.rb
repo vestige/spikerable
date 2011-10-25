@@ -1,11 +1,25 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.undone.paginate(:page => params[:page], :per_page => 10)
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @tasks = @category.tasks
+    else
+      @tasks = Task
+    end
+
+    @tasks = @tasks.undone.paginate(:page => params[:page], :per_page => 10)
   end
   
   def done
-    @tasks = Task.done.paginate(:page => params[:page], :per_page => 10)
-    
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @tasks = @category.tasks
+    else
+      @tasks = Task
+    end
+
+    @tasks = @tasks.done.paginate(:page => params[:page], :per_page => 10)
+
     render :index
   end
   
@@ -26,9 +40,12 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = Task.create(params[:task])
-
-    redirect_to @task
+    @task = Task.new(params[:task])
+    if @task.save
+      redirect_to @task
+    else
+      render :new
+    end
   end
   
   def edit
@@ -37,9 +54,13 @@ class TasksController < ApplicationController
   
   def update
     @task = Task.find(params[:id])
-    @task.update_attributes(params[:task])
-    
-    redirect_to @task
+    @task.attributes = params[:task]
+    if @task.save
+      redirect_to @task
+    else
+      render :edit
+    end
+      
   end
   
   def destroy
