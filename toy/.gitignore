@@ -5,4 +5,4 @@ log/*.log
 tmp/
 toy.xcodeproj/project.pbxproj
 toy.xcodeproj/project.xcworkspace/xcuserdata/vestige.xcuserdatad/UserInterfaceState.xcuserstate
-
+Gemfile.lock
