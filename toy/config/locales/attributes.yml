@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      task:
+        name: Title 
+        due_date: Limite
+        description: Detail
+        done: finish?
