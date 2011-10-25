@@ -1,4 +1,13 @@
 <h1>task : <%= @task.name %></h1>
 
-<%= @task.due_date %> <br>
+<% if @task.category %>
+<div id="task_category"><%= @task.category.name %></div>
+<% end %>
+
+<div id="task_detail"><%= simple_format(@task.description) %></div>
+<div id="task_due_date"><%= @task.due_date %> </div>
+
+<p>
+<%= link_to("modify", [:edit, @task]) %><br>
 <%= link_to "back to list", :tasks %>
+</p>

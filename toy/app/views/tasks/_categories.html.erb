@@ -1,0 +1,17 @@
+<% action = params[:action] == "done" ? :done : nil %>
+<ul id="categories">
+<% if @category %>
+  <li><%= link_to "all", [action, :tasks] %></li>
+<% else %>
+  <li class="selected">all</li>
+<% end %>
+
+<% Category.all.each do |index| %>
+  <% if @category != index %>
+    <li><%= link_to index.name, [action, index, :tasks] %> </li>
+  <% else %>
+    <li class="selected"><%= index.name %></li>
+  <% end %>
+<% end %>
+
+</ul>
