@@ -4,19 +4,9 @@
   <%= text_field_tag "query", params[:query] %> <%= submit_tag "Search" %>
 <% end %>
 
-<ul class = "navi">
-  <% if params[:action] == "index" %>
-    <li class = "selected"> Todo </li>
-  <% else %>
-    <li> <%= link_to "to Todo List", :tasks %> </li>
-  <% end %>
+<%= render "categories" if Category.all.present? %>
 
-  <% if params[:action] == "done" %>
-    <li class = "selected"> Finsh List </li>
-  <% else %>
-    <li><%= link_to "to Finish List", [:done, :tasks] %></li>
-  <% end %>
-</ul>
+<%= render "navi" %>
 
 <table class="tasks">
   <col class="name" />
