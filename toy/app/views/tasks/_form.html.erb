@@ -1,16 +1,26 @@
 <%= form_for @task do |form| %>
 
-<ul>
-<li> <%= form.label :name, "name" %> <%= form.text_field :name %> </li>
+<% unless @task.errors.empty? %>
+  <p>Invalid Input Data!</p>
+  <ul class="error_message">
+    <% @task.errors.full_messages.each do |message| %>
+      <li> <%= message %> </li>
+    <% end %>
+  </ul>
+<% end %>
 
+<ul>
+<li> <%= form.label :name %> <%= form.text_field :name %> </li>
+<>
 <li>
-<%= form.label :due_date, "limit" %>
+<%= form.label :due_date %>
 <%= form.date_select :due_date, :use_month_numbers => true,
 :order => [:year, :month, :day],
 :start_year => Time.current.year,
 :end_year => Time.current.year + 1 %>
 </li>
-<li> <%= form.check_box :done %><%= form.label :done, "finish" %> </li>
+<li><%= form.label :description, "detail" %><%= form.text_area :description %></li>
+<li> <%= form.check_box :done %><%= form.label :done %> </li>
 
 <li> <%= form.submit "Done" %> </li>
 

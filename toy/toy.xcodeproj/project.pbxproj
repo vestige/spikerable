@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		D9DE276C13F1E1870039DE74 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
 		D9DE276D13F1E1BE0039DE74 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
+		D9E89A0F1400922900BDF651 /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
 		D9FB369713F1F455004A9185 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -16,6 +17,7 @@
 		D9DE26AF13F1DF690039DE74 = {
 			isa = PBXGroup;
 			children = (
+				D9E89A0F1400922900BDF651 /* public */,
 				D9DE276C13F1E1870039DE74 /* app */,
 				D9DE276D13F1E1BE0039DE74 /* config */,
 				D9FB369713F1F455004A9185 /* db */,
@@ -27,6 +29,9 @@
 /* Begin PBXProject section */
 		D9DE26B113F1DF690039DE74 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = D9DE26B413F1DF690039DE74 /* Build configuration list for PBXProject "toy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;

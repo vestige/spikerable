@@ -21,3 +21,33 @@ table.tasks col.name {
 table.tasks col.due_date {
   background-color: #ddd;
 }
+
+div#task_category {
+  color: #080;
+  font-weight: bold;
+}
+div#task_due_date {
+  text-align: left;
+  color: #f00;
+}
+
+div#task_detail {
+  border: solid 1px #888;
+  padding: 5px;
+}
+
+ul#categories {
+  width: 540px;
+  list-style: none;
+  margin: 15px auto 5px;
+  padding: 10px;
+  border: dotted 1px #ccc;
+}
+ul#categories li {
+  display: inline;
+  padding: 5px;
+}
+ul#categories li.selected {
+  font-weight: bold;
+}
+
